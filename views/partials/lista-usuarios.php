@@ -20,4 +20,7 @@
       </tr>
     <?php endwhile; ?>
   </table>
+  <p><a href="<?php print $self; ?>?q=new">Agregar un usuario</a></p>
+<?php else: ?>
+  <p class="info">&#9888; No hay usuario en la Base de Datos todavía. <a href="<?php print $self; ?>?q=new">Agregar un usuario</a></p>
 <?php endif; ?>

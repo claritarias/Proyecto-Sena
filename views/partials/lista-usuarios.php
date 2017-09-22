@@ -1,4 +1,4 @@
-<?php if ($usuarios): ?>
+<?php if ($usuarios && $usuarios->num_rows > 0): ?>
   <table border="1">
     <thead>
     <tr>

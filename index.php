@@ -12,9 +12,12 @@ $fields = array(
   'fechaDeNacimiento' => 'Fecha de Nacimiento',
   'correoElectronico' => 'Correo Electrónico'
 );
+
+$mode = (!empty($_GET['q'])) ? $_GET['q'] : '';
+$title = page_title($mode);
+
 $modelo = new Modelo(array_keys($fields));
 $usuarios = $modelo->obtenerTodos();
-
 
 if (!empty($_POST['submitted'])) {
   unset($_POST['submitted']);
@@ -22,7 +25,8 @@ if (!empty($_POST['submitted'])) {
   $message = $modelo->create($data);
 }
 
-$mode = (!empty($_GET['q'])) ? $_GET['q'] : '';
-$title = page_title($mode);
+if ($mode == 'delete' && !empty($_GET)) {
+  $message = $modelo->delete($_GET['id']);
+}
 
 include_once('./views/principal.php');

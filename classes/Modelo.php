@@ -40,7 +40,7 @@ class Modelo {
     $query = "SELECT * FROM `persona` WHERE `idpersona`=$id";
 
     if ($results = $this->mysqli->query($query)) {
-      return $results;
+      return $results->fetch_assoc();
     }
 
     return false;
@@ -51,10 +51,12 @@ class Modelo {
   }
 
   public function delete($id) {
+    $usuario = $this->read($id);
+
     $query = "DELETE FROM `persona` WHERE `idpersona`=$id";
 
     if ($results = $this->mysqli->query($query)) {
-      return $results;
+      return "Usuario " . $usuario['nombre'] . " ha sido eliminado de manera exitosa!";
     }
 
     return false;

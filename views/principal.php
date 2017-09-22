@@ -3,6 +3,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="./static/styles.css"/>
 
   <title>Evaluación de Instructores</title>
 </head>

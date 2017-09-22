@@ -32,10 +32,8 @@ class Modelo {
     $query = "INSERT INTO `persona` ($fields) VALUES ($values)";
 
     if ($this->mysqli->query($query) === TRUE) {
-      print "Usuario creado";
+      return "Usuario creado";
     }
-
-    print $query;
   }
 
   public function read($id) {

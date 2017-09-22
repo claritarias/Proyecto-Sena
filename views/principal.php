@@ -13,6 +13,9 @@
     <h1><?php print $title; ?></h1>
   </header>
   <main>
+    <?php if ($message): ?>
+      <p class="info"><?php print $message; ?></p>
+    <?php endif; ?>
     <?php
       switch($mode) {
         case 'new':

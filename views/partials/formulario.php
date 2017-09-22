@@ -16,7 +16,6 @@
     <tr>
       <td colspan="2">
         <input type="submit" value="Guardar">
-        <button href="<?php print $self; ?>?q=">Cancelar</button>
       </td>
     </tr>
   </table>

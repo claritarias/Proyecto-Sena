@@ -3,6 +3,7 @@ require_once('./classes/Modelo.php');
 include_once('./utils.php');
 
 $self = $_SERVER['self'];
+$message = "";
 $fields = array(
   'idpersona' => 'Id',
   'nombre' => 'Nombre',
@@ -18,7 +19,7 @@ $usuarios = $modelo->obtenerTodos();
 if (!empty($_POST['submitted'])) {
   unset($_POST['submitted']);
   $data = $_POST;
-  $modelo->create($data);
+  $message = $modelo->create($data);
 }
 
 $mode = (!empty($_GET['q'])) ? $_GET['q'] : '';

@@ -3,20 +3,15 @@
 class Modelo {
 
   protected $mysqli;
-  public $fields = [];
 
   public function __construct($fields) {
-    // Create DB connection
-    $this->fields = $fields;
-
-
+    // Crear la conexion a la BD
     $this->mysqli = new mysqli("dockerlamp_db_1", "root", "root", "evaluacion_de_instructores");
     //$this->mysqli = new mysqli("localhost", "root", "", "evaluacion_de_instructores");
 
-    /* check connection */
+    // Verifica la conexion
     if ($this->mysqli->connect_errno) {
-      printf("Connect failed: %s\n", $this->mysqli->connect_error);
-      //exit();
+      $mensaje = "Connect failed: " . $this->mysqli->connect_error;
     }
   }
 
@@ -79,7 +74,7 @@ class Modelo {
   }
 
   public function obtenerTodos() {
-    $query = "SELECT * FROM `persona`";
+    $query = "SELECT `idpersona`, `nombre`, `correoElectronico` FROM `persona`";
 
     if ($results = $this->mysqli->query($query)) {
       return $results;

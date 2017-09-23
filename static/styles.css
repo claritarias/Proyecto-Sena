@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-size: 75%;
+    font-size: 16px;
     color: #222;
     background: #fff;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -88,6 +88,10 @@ a:hover {
 
 a {
     color: #06c;
+    text-decoration: none;
+}
+
+a:hover {
     text-decoration: underline;
 }
 
@@ -169,11 +173,6 @@ dd {
 /* Tables
 -------------------------------------------------------------- */
 
-/*
-	Because of the need for padding on TH and TD, the vertical rhythm
-	on table cells has to be 27px, instead of the standard 18px or 36px
-	of other elements.
- */
 table {
     margin-bottom: 1.4em;
     width: 100%;
@@ -191,10 +190,6 @@ th, td, caption {
     padding: 4px 10px 4px 5px;
 }
 
-/*
-	You can zebra-stripe your tables in outdated browsers by adding
-	the class "even" to every other table row.
- */
 tbody tr:nth-child(even) td,
 tbody tr.even td {
     background: #e5ecf9;
@@ -206,67 +201,6 @@ tfoot {
 
 caption {
     background: #eee;
-}
-
-/* Misc classes
--------------------------------------------------------------- */
-
-.small {
-    font-size: .8em;
-    margin-bottom: 1.875em;
-    line-height: 1.875em;
-}
-
-.large {
-    font-size: 1.2em;
-    line-height: 2.5em;
-    margin-bottom: 1.25em;
-}
-
-.hide {
-    display: none;
-}
-
-.quiet {
-    color: #666;
-}
-
-.loud {
-    color: #000;
-}
-
-.highlight {
-    background: #ff0;
-}
-
-.added {
-    background: #060;
-    color: #fff;
-}
-
-.removed {
-    background: #900;
-    color: #fff;
-}
-
-.first {
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.last {
-    margin-right: 0;
-    padding-right: 0;
-}
-
-.top {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.bottom {
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 /* Form fields
@@ -388,4 +322,75 @@ form.inline p {
 
 .info a {
     color: #205791;
+}
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small {
+    font-size: .8em;
+    margin-bottom: 1.875em;
+    line-height: 1.875em;
+}
+
+.large {
+    font-size: 1.2em;
+    line-height: 2.5em;
+    margin-bottom: 1.25em;
+}
+
+.hide {
+    display: none;
+}
+
+.quiet {
+    color: #666;
+}
+
+.loud {
+    color: #000;
+}
+
+.highlight {
+    background: #ff0;
+}
+
+.added {
+    background: #060;
+    color: #fff;
+}
+
+.removed {
+    background: #900;
+    color: #fff;
+}
+
+.first {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.last {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.top {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.bottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.actions {
+    text-align: center;
+}
+
+.actions a {
+    font-size: 2.5em;
+    margin: 0 10px;
+    text-decoration: none;
 }

@@ -11,7 +11,7 @@
         $type = 'date';
       }
 
-      $value = (count($form_values) > 0) ? $form_values[$field] : '';
+      $value = (count($datos_usuario) > 0) ? $datos_usuario[$field] : '';
     ?>
       <tr>
         <td>
@@ -30,4 +30,3 @@
     </tr>
   </table>
 </form>
-<p><a href="<?php print $self; ?>?q=">&laquo; Volver</a></p>

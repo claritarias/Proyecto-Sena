@@ -4,8 +4,8 @@ include_once('./utils.php');
 
 $self = $_SERVER["PHP_SELF"];
 
-$message = "";
-$form_values = false;
+$mensaje = "";
+$datos_usuario = false;
 $fields = array(
   'idpersona' => 'Id',
   'docIdentificacion' => 'Número de Documento',
@@ -21,12 +21,14 @@ $title = page_title($mode);
 $modelo = new Modelo(array_keys($fields));
 
 if ($mode && count($_GET['id']) > 0) {
+  $id = $_GET['id'];
   switch($mode) {
-    case 'edit':
-      $form_values = $modelo->read($_GET['id']);
-      break;
     case 'delete':
-      $message = $modelo->delete($_GET['id']);
+      $mensaje = $modelo->delete($id);
+      break;
+    case 'edit':
+    case 'view':
+      $datos_usuario = $modelo->read($id);
       break;
   }
 }
@@ -39,10 +41,11 @@ if (!empty($_POST['op'])) {
 
   switch ($op){
     case 'new':
-      $message = $modelo->create($data);
+      unset($data['idpersona']);
+      $mensaje = $modelo->create($data);
       break;
     case 'edit':
-      $message = $modelo->update($data);
+      $mensaje = $modelo->update($data);
       break;
   }
 }

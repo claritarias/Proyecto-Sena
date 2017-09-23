@@ -9,6 +9,9 @@ function page_title($mode) {
     case 'new':
       $title = "Agregar Usuario";
       break;
+    case 'view':
+      $title = "Información de Usuario";
+      break;
     default:
       $title = 'Administración de Usuarios';
       break;
@@ -17,7 +20,7 @@ function page_title($mode) {
   return $title;
 }
 
-function trace($obj) {
+function debug($obj) {
   print "<pre>";
   print_r($obj);
   print "</pre>";

@@ -16,3 +16,9 @@ function page_title($mode) {
 
   return $title;
 }
+
+function trace($obj) {
+  print "<pre>";
+  print_r($obj);
+  print "</pre>";
+}

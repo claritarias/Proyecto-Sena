@@ -46,8 +46,24 @@ class Modelo {
     return false;
   }
 
-  public function update($id) {
-    // UPDATE
+  public function update($data) {
+    $id = $data['idpersona'];
+    unset($data['idpersona']);
+    $array_values = array();
+
+    foreach($data as $field => $value) {
+      array_push($array_values, "`" . $field . "`='" . $value . "'");
+    }
+    $values = implode(",", $array_values);
+
+    $query = "UPDATE `persona` SET $values WHERE `idpersona`=$id";
+
+    if ($this->mysqli->query($query) === TRUE) {
+      $usuario = $this->read($id);
+      return "Usuario " . $usuario['nombre'] . " actualizado";
+    }
+
+    return false;
   }
 
   public function delete($id) {

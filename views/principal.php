@@ -9,10 +9,8 @@
 </head>
 
 <body>
-  <header>
-    <h1><?php print $title; ?></h1>
-  </header>
   <main>
+	<?php include('./views/partials/header.php');?>
     <?php if ($mensaje): ?>
       <p class="success"><?php print $mensaje; ?></p>
     <?php endif; ?>
@@ -32,7 +30,7 @@
           break;
       }
     ?>
+	<footer></footer>
   </main>
-  <footer></footer>
 </body>
 </html>

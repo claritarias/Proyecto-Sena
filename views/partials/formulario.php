@@ -12,6 +12,7 @@
       }
 
       $value = (count($datos_usuario) > 0) ? $datos_usuario[$field] : '';
+	  
     ?>
       <tr>
         <td>
@@ -25,7 +26,7 @@
     <input type="hidden" name="op" value="<?php print $_GET['q']; ?>">
     <tr>
       <td colspan="2">
-        <input type="submit" value="Guardar">
+        <input class="button" type="submit" value="Guardar">
       </td>
     </tr>
   </table>

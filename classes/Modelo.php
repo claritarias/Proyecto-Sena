@@ -6,8 +6,7 @@ class Modelo {
 
   public function __construct($fields) {
     // Crear la conexion a la BD
-    $this->mysqli = new mysqli("dockerlamp_db_1", "root", "root", "evaluacion_de_instructores");
-    //$this->mysqli = new mysqli("localhost", "root", "", "evaluacion_de_instructores");
+    $this->mysqli = new mysqli("localhost", "root", "", "evaluacion_de_instructores");
 
     // Verifica la conexion
     if ($this->mysqli->connect_errno) {

@@ -20,7 +20,7 @@ $title = page_title($mode);
 
 $modelo = new Modelo(array_keys($fields));
 
-if ($mode && count($_GET['id']) > 0) {
+if ($mode && array_key_exists('id', $_GET) && count($_GET['id']) > 0) {
   $id = $_GET['id'];
   switch($mode) {
     case 'delete':
